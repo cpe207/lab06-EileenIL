@@ -1,7 +1,7 @@
 {
   "name": "lab_06",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ptwfhEPC)\r # Lab 06 : The Joy of pure TypeScript/JavaScript Part 3",
   "main": "index.js",
   "devDependencies": {
     "@babel/core": "*",
