@@ -1,33 +1,18 @@
 // const axios = require("axios");
 import axios from "axios";
-interface Todo {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-interface User {
-  id: number;
-  name: string;
-  }
+
 
 /* assign interface/type to the function definition properly */
-const getUser = async (userId: number): Promise<string> => {
-  try {
-    const res = await axios.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    const user = res.data;
-    return user.name;
-  } catch (err) {
-    return "INVALID USER ID";
-  }
-};
 const getTodo = async (todoId: number): Promise<any> => {
   try {
-    const res = await axios.get<Todo>(`https://jsonplaceholder.typicode.com/todos/${todoId}`);
+    
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/todos/${todoId}`);
     const todo = res.data;
-    const ownerName = await getUser(todo.userId);
+    const userId = todo.userId;
+    const user = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const userdata =user.data;
     return {
-      owner: ownerName,
+      owner: userdata.name,
       title: todo.title,
       completed: todo.completed,
     };
