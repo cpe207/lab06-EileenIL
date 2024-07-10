@@ -5,7 +5,7 @@ const getUser = async (userId: number):Promise<string> => {
   try {
     const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
     const user = res.data;
-    const output = `${user.name}`;
+    const output = user.name;
     return output ;
   } 
   catch (err) {
