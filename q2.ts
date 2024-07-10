@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 /* assign interface/type to the function definition properly */
-const getTodo = async (todoId: number): Promise<any> => {
+const getTodo = async (todoId: number) => {
   try {
     
     const res = await axios.get(`https://jsonplaceholder.typicode.com/todos/${todoId}`);
